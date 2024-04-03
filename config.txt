@@ -1,0 +1,21 @@
+1. create directory untuk project nya
+
+// initialisasi node js ke project nya dan install package2 yg akan digunakan di project nya
+2. npm init 
+3. npm install express morgan nodemon pg pg-hstore sequelize sequelize-cli
+
+// ini kalau mau install sequelize-cli di laptop
+npm install -g sequelize-cli
+
+// data model dan migration ke database menggunakan sequelize 
+4. sequelize init 
+// no 5 hanya example dari membuat suatu model
+5. sequelize model:generate --name Product --attributes name:string,price:float,stock:integer 
+contoh =  
+sequelize model:generate --name transactionDetails --attributes customer_number:string,productId:string,transaction_number:integer,status:string,price:string 
+6. sequelize db:create (kalau database yg kita config blm ada) 
+7. sequelize db:migrate 
+
+// configurasi npm dan database koneksi
+8. configurasi package.json, spt script dev : nodemon index.js, dll.
+9. configurasi database.js di folder config untuk database connection dari sequelize nya (sequelizerc buat configure settingan sequelize-cli)

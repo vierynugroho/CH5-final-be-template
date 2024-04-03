@@ -1,0 +1,20 @@
+LOGGER 
+Winston atau Morgan
+
+EXPRESS 
+Express JS adalah salah satu framework nodejs yang sangat populer untuk memudahkan kita berinteraksi baik sistem routing sampai membuat api dengan lebih simpel 
+sangat mudah dipelajari dan digunakan 
+
+SEQUELIZE 
+Sequelize adalah library dalam Javascript yang membuatnya mudah untuk mengelola database SQL. Sequelize adalah ORM database untuk mempermudah pemetaan database entry menjadi object, sehingga akan mempercepat dan mempermudah proses interaksi dengan database. (Object Relationship Mapping) 
+Dengan memanfaatkan ORM, Anda dapat membuat aplikasi dengan mudah tanpa menuliskan perintah SQL (Structured Query Language). 
+intinya Sequelize adalah library dalam Javascript yang membuatnya mudah untuk mengelola database SQL.
+
+POSTGRESQL 
+kebutuhan kita di table nya kan konsisten, kemungkinan besar tidak akan ada penambahan di table nya krn kita jg bikin service kan. jadi yah pake postgre. 
+knp postgre karena lebib cepat dan ada beberapa data type yg hanya dimiliki postgress 
+postgress lbh cepet dibanding mysql gtu maksudnya mas ? iyaa 
+(knp ga non sql? karena aplikasi yang dibuat membutuhkan data yg strict dan tidak dinamis)
+
+Node JS 
+bilang aja baru tau itu dan ingin memperdalam fundamental itu sebelum mencoba yg lainnya, cuma ya sambil bilang karna nodejs lebih mudah nantinya untuk belajar sisi client
