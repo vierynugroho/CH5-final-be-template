@@ -90,16 +90,31 @@ const findProducts = async (req, res, next) => {
 				{
 					model: Shop,
 					where: includeShopCondition,
+					attributes: ['name'],
+				},
+				{
+					model: User,
+					attributes: ['name'],
 				},
 			],
 			where: condition,
 			order: [['id', 'ASC']],
+			attributes: ['name', 'price', 'stock', 'createdAt', 'updatedAt'],
+			limit: pageSize,
+			offset: offset,
 		});
+
+		const totalPages = Math.ceil(products.length / pageSize);
 
 		res.status(200).json({
 			status: 'Success',
 			data: {
 				products,
+				pagination: {
+					totalPages,
+					pageNum,
+					pageSize,
+				},
 			},
 		});
 	} catch (err) {
@@ -114,6 +129,11 @@ const findProductById = async (req, res, next) => {
 				id: req.params.id,
 			},
 		});
+
+		//! Check Ownership
+		if (product.shopId !== req.user.shopId) {
+			return next(new ApiError('KAMU BUKAN DARI TOKO PEMILIK PRODUK TERSEBUT !!!!', 400));
+		}
 
 		res.status(200).json({
 			status: 'Success',
